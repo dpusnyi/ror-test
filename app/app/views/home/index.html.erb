@@ -1,0 +1,14 @@
+<% if current_user %>
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %> |
+  <%= link_to 'Crete topic', new_topic_path, method: :create %> |
+  <%= link_to 'Crete question', new_question_path, method: :create %>
+<% else %>
+  <br>
+  <%= link_to 'Sign up', new_user_registration_path %>
+  <%= link_to 'Sign in', new_user_session_path %>
+<% end %>
+
+<h1> Questions </h1>
+<% @questions.each do |question| %>
+  <p><%= link_to question.title, question, class: "question" %></p>
+<% end %>

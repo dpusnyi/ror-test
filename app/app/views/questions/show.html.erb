@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Home', root_path %>
+
+<style>
+
+  .follow_user, .follow_topic {
+    padding: 10px;
+  }
+
+</style>
+
+<h1><%= @question.title %></h1>
+<p><%= @question.text %></p>
+<%#= link_to @f_user.email, @f_user %>
+
+<% if @answers.nil? %>
+  <h2> There are no answers yet</h2>
+<% else %>
+  <h2> Questions </h2>
+  <% @answers.each do |answer| %>
+    <p><%= answer.text  %></p>
+  <% end %>
+<% end %>
+
+
+
+
+
